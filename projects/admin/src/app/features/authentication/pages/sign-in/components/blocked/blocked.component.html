@@ -1,0 +1,18 @@
+<section class="blocked" [dir]="'dir' | translate">
+  <figure>
+    <img
+      src="../../../../../../../assets/images/authentication/welcome-screen-img.svg"
+      alt=""
+    />
+  </figure>
+  <p>
+    {{ "authentication.sign-in.blocking.paragraph.pOne" | translate }}
+    <span>
+      {{ "authentication.sign-in.blocking.paragraph.span" | translate }}
+    </span>
+    {{ "authentication.sign-in.blocking.paragraph.pTwo" | translate }}
+  </p>
+  <a routerLink="/passwordReset/email">{{
+    "authentication.sign-in.blocking.button" | translate
+  }}</a>
+</section>

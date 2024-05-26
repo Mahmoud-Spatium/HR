@@ -1,0 +1,95 @@
+<div class="verified">
+  <div>
+    <figure>
+      <img
+        src="../../../../../assets/images/authentication/line-md_confirm-circle.svg"
+        alt=""
+      />
+    </figure>
+    <p>
+      @if (from() === "login") {
+        {{ "authentication.verified.head.successLogin" | translate }}
+      } @else if (from() === "upAttach") {
+        {{ "authentication.verified.head.uploadFile" | translate }}
+      } @else if (from() === "setPassword") {
+        {{ "authentication.verified.head.passReset" | translate }}
+      } @else {
+        {{ "authentication.verified.head.verified" | translate }}
+      }
+    </p>
+    <figure class="mb-5">
+      <img
+        src="../../../../../assets/images/authentication/{{ from() }}.svg"
+        alt=""
+      />
+    </figure>
+    @if (from() === "inPassword" || from() === "setPassword") {
+      <p class="mb-2">
+        {{ "authentication.verified.body.successReset.message" | translate }}
+      </p>
+    }
+    @if (from() === "upPhone") {
+      <p>
+        {{ "authentication.verified.body.userSignUp.message" | translate }}
+      </p>
+    }
+    @if (from() === "upEmail") {
+      <p>
+        {{
+          "authentication.verified.body.companySignUp.message.pOne" | translate
+        }}
+        <br />
+        {{
+          "authentication.verified.body.companySignUp.message.pTwo" | translate
+        }}
+        <br />
+        <span
+          >{{ "authentication.verified.body.companySignUp.span" | translate }}
+        </span>
+      </p>
+    }
+    @if (from() === "upAttach") {
+      <p>
+        {{
+          "authentication.verified.body.uploadFiles.message.pOne" | translate
+        }}
+        <br />
+        {{
+          "authentication.verified.body.uploadFiles.message.pTwo" | translate
+        }}
+        <br />
+        <span class="help"
+          >{{ "authentication.verified.body.uploadFiles.spanOne" | translate }}
+        </span>
+        <span
+          >{{ "authentication.verified.body.uploadFiles.spanTwo" | translate }}
+        </span>
+      </p>
+    }
+    @if (from() === "upSuccess") {
+      <p>
+        {{ "authentication.verified.body.activateAccount.message" | translate }}
+      </p>
+    }
+    @if (from() === "resetPassword") {
+      <p>{{ "authentication.verified.body.passReset.message" | translate }}</p>
+    }
+    @if (from().includes("in") || from() === "setPassword") {
+      <app-loader />
+    } @else if (from() !== "upAttach") {
+      <button (click)="onNavigate()">
+        @if (from() === "upPhone") {
+          {{ "authentication.verified.body.userSignUp.button" | translate }}
+        } @else if (from() === "upEmail") {
+          {{ "authentication.verified.body.companySignUp.button" | translate }}
+        } @else if (from() === "upSuccess") {
+          {{
+            "authentication.verified.body.activateAccount.button" | translate
+          }}
+        } @else if (from() === "resetPassword") {
+          {{ "authentication.verified.body.passReset.button" | translate }}
+        }
+      </button>
+    }
+  </div>
+</div>

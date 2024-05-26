@@ -1,0 +1,33 @@
+@import "../../../../../../../style/authentication/placeholder";
+
+.company-profile {
+  & {
+    @extend %container;
+    gap: calc(20rem / 16);
+    top: calc(80rem / 16);
+  }
+  label {
+    @extend %label;
+  }
+  input {
+    @extend %input;
+    margin-bottom: calc(25rem / 16);
+  }
+  h1 {
+    @extend %header;
+  }
+  p {
+    @extend %paragraph;
+  }
+}
+
+// helpful classes
+.not-match {
+  @extend %not-match;
+}
+.not-match-confirm {
+  border-color: red !important;
+}
+.not-allow {
+  @extend %not-allow;
+}

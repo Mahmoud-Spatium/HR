@@ -1,0 +1,70 @@
+header {
+  & {
+    height: calc(88rem / 16);
+    padding: 0px 25px;
+    background-color: #edf2f7;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 0px 0px calc(36rem / 16) calc(36rem / 16);
+    position: sticky;
+    z-index: 2;
+    @media (max-width: calc(676rem / 16)) {
+      justify-content: center;
+    }
+  }
+  .content {
+    & {
+      display: flex;
+      align-items: center;
+      gap: calc(24rem / 16);
+      @media (min-width: calc(767rem / 16)) {
+        margin-right: calc(64rem / 16);
+      }
+    }
+    a {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: clamp(calc(14rem / 16), 4vw, calc(16rem / 16));
+      color: #101218;
+    }
+    .drop {
+      & {
+        background-color: white;
+        border-radius: 15px;
+      }
+      button {
+        border: none;
+      }
+    }
+  }
+}
+
+// styling the dropdown
+:host ::ng-deep .p-dropdown {
+  border-radius: 360px !important;
+  width: 130px;
+  border: none;
+  box-shadow: none;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  .p-dropdown-clear-icon.p-icon {
+    display: none;
+  }
+  .lang {
+    font-size: 14px;
+    font-weight: 400;
+    color: #101218;
+  }
+  span.p-element.p-dropdown-label.p-inputtext {
+    padding: 7px 10px;
+  }
+  .p-dropdown-trigger {
+    width: 35px;
+  }
+  img {
+    border-radius: 50% !important;
+  }
+}

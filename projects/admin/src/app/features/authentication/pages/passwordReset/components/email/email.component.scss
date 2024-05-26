@@ -1,0 +1,49 @@
+@import "../../../../../../../style/authentication/placeholder";
+.email {
+  @extend %container;
+  h1 {
+    @extend %header;
+  }
+  p {
+    @extend %paragraph;
+    white-space: wrap;
+  }
+  a {
+    @extend %backLink;
+  }
+  span:not(.error) {
+    @extend %link;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    @extend %label;
+  }
+  input {
+    @extend %input;
+  }
+  button {
+    @extend %button;
+  }
+}
+
+// helpful classes
+.error {
+  @extend %not-match;
+  top: calc(-10rem / 16);
+}
+.invalid {
+  border-color: red !important;
+}
+.not-allow {
+  @extend %not-allow;
+}
+
+// styling the recaptcha
+.captcha {
+  display: flex;
+  justify-content: center;
+  margin: calc(20rem / 16) 0;
+}

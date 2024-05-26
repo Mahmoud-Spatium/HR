@@ -1,0 +1,142 @@
+// country list
+:host {
+  display: none;
+}
+.countries-list {
+  & {
+    position: absolute;
+    z-index: 1000;
+    top: -20px;
+    left: -4px;
+    width: 344px;
+    height: 380px;
+    background-color: white;
+    border-radius: 24px;
+    overflow: hidden;
+    padding-top: 8px;
+    border: 1px solid #edf0f2;
+    box-shadow: 0px 16px 40px 0px #7090b033;
+  }
+  &[dir="rtl"] {
+    left: 0px;
+    right: -4px;
+  }
+  .search {
+    & {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 16px;
+      height: 48px;
+      border-radius: 360px;
+      border: 1px solid #edf0f2;
+      width: 328px;
+      margin: auto;
+    }
+    input {
+      border-radius: 0px 360px 360px 0px;
+      flex: 1;
+      border: none;
+      margin: 0;
+      box-shadow: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  ul {
+    & {
+      margin-top: 20px;
+      overflow-y: scroll;
+      width: 330px;
+      height: 290px;
+      padding: 0;
+    }
+    /* width */
+    &::-webkit-scrollbar {
+      width: 10px;
+      margin-bottom: 10px;
+    }
+    &::-moz-scrollbar {
+      width: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #edf0f2;
+      border-radius: 20px;
+    }
+    &::-moz-scrollbar-track {
+      background: #edf0f2;
+      border-radius: 20px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #0acba7;
+      border-radius: 20px;
+    }
+    &::-moz-scrollbar-thumb {
+      background: #0acba7;
+      border-radius: 20px;
+    }
+    // styling the list items
+    li {
+      & {
+        display: flex;
+        align-items: center;
+        padding: 10px 24px;
+        margin-bottom: 8px;
+        cursor: pointer;
+        span {
+          font-size: 14px;
+          font-weight: 500;
+          display: flex;
+          gap: calc(2rem / 16);
+          &[dir="rtl"] {
+            span:nth-of-type(2) {
+              order: -1;
+            }
+          }
+        }
+      }
+      img {
+        width: 32px;
+        height: 24px;
+        border-radius: 2px;
+      }
+    }
+  }
+  // no results styling
+  .no-results {
+    & {
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      width: 150px;
+      height: 150px;
+    }
+    p {
+      color: black;
+      font-size: clamp(calc(14rem / 16), 4vw, calc(16rem / 16));
+    }
+  }
+  @media (max-width: 500px) {
+    & {
+      width: 280px;
+      height: 330px;
+      left: -5px;
+    }
+    ul {
+      width: 270px;
+      height: 240px;
+    }
+    .search {
+      width: 265px;
+    }
+  }
+}

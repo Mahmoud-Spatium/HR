@@ -1,0 +1,17 @@
+@import "../../../../../../../style/authentication/placeholder";
+.blocked {
+  @extend %container;
+  p {
+    @extend %paragraph;
+    white-space: wrap;
+  }
+  img {
+    max-width: 100%;
+  }
+  span {
+    @extend %link;
+  }
+  a {
+    @extend %button;
+  }
+}

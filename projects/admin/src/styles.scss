@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none !important;
+}
+html,
+body {
+  height: 100%;
+  background-color: #f6f7f9 !important;
+}
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif !important;
+}
+
+body[dir="rtl"] {
+  font-family: "Cairo", sans-serif !important;
+}
+
+:root {
+  --primary-color: #0acba7;
+  --primary-color-opacity-one: #c0fdf1;
+  --primary-color-opacity-two: #e6fdf9;
+  --states-one: #e85656;
+  --states-two: #f9b60a;
+  --states-three: #00e063;
+  --states-four: #1f9aff;
+  --states-five: #a450bc;
+  --grey-scale-one: #ffffff;
+  --grey-scale-two: #edf0f2;
+  --grey-scale-three: #b8c1cc;
+  --grey-scale-four: #64748b;
+  --grey-scale-five: #334155;
+  --grey-scale-six: #0f172a;
+  --background-primary: #f9f9f9;
+  --background-secondary: #edf2f7;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --accent-one: #d2fbe7;
+  --accent-two: #ffdb;
+  --accent-three: #fbf1d2;
+  --accent-four: #ffd89d;
+  --accent-five: #d1defa;
+  --accent-six: #e0f2fe;
+  --accent-seven: #fcf4ff;
+  --border-radius-36: calc(36rem / 16);
+  --border-radius-360: calc(360rem / 16);
+  --border-radius-24: calc(24rem / 16);
+  --border-radius-12: calc(12rem / 16);
+  // 48 - 28
+  --h1: clamp(1.75rem, 1.3152rem + 2.1739vi, 3rem);
+  // 40 - 25
+  --h2: clamp(1.5625rem, 1.2364rem + 1.6304vi, 2.5rem);
+  // 32 - 22
+  --h3: clamp(1.375rem, 1.1576rem + 1.087vi, 2rem);
+  // 24 - 20
+  --h4: clamp(1.25rem, 1.163rem + 0.4348vi, 1.5rem);
+  // 20 - 18
+  --x-large: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
+  // 18 - 16
+  --large: clamp(1rem, 0.9565rem + 0.2174vi, 1.125rem);
+  // 16 - 14
+  --medium: clamp(0.875rem, 0.8315rem + 0.2174vi, 1rem);
+  // 14 - 12
+  --small: clamp(0.75rem, 0.7065rem + 0.2174vi, 0.875rem);
+  // 12 - 10
+  --x-small: clamp(0.625rem, 0.5815rem + 0.2174vi, 0.75rem);
+}
+
+// styling the placeholder
+input::placeholder {
+  color: #c5c7cf !important;
+  font-size: var(--small) !important;
+}
+
+// Prime NG
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";

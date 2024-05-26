@@ -1,0 +1,237 @@
+{
+  "dir": "ltr",
+  "header": {
+    "services": "Services",
+    "faq": "F.A.Q",
+    "eng": "English",
+    "ar": "Arabic"
+  },
+  "authentication": {
+    "start-auth": {
+      "welcome": "Welcome to the HR app",
+      "in": "Sign In",
+      "up": "Sign Up"
+    },
+    "sign-up": {
+      "user-profile": {
+        "header": "Create User Profile",
+        "paragraph": "Please enter your Personal Information",
+        "name": "Name",
+        "namePlaceholder": "Enter your name",
+        "phone": "Phone Number",
+        "footer": "Already have an account?",
+        "link": "Sign in",
+        "button": "Continue",
+        "search": "Search",
+        "errors": {
+          "noCountry": "No Country Matches This Name",
+          "enterPhone": "Phone Number is required.",
+          "invalidLength": "Phone Number is invalid.",
+          "nameLength": "Full name can’t be less than 2 characters.",
+          "enterName": "Full Name is required.",
+          "spaces": "Full name mustn't contain consecutive spaces.",
+          "SorN": "Full name must contain only letters."
+        }
+      },
+      "company-profile": {
+        "header": "Create Company Profile",
+        "paragraph": "Please enter your Company Information",
+        "name": "Company Name",
+        "namePlaceholder": "Enter company name",
+        "email": "Email address",
+        "emailPlaceholder": "Enter email address",
+        "password": "Password",
+        "passwordPlaceholder": "Enter your password",
+        "confirmPassword": "Confirm Password",
+        "confirmPasswordPlaceholder": "Confirm your password",
+        "hint": "Password hint",
+        "minChar": "characters minimum",
+        "passStrength": {
+          "weak": "Weak",
+          "medium": "Medium",
+          "good": "Good",
+          "strong": "Strong"
+        },
+        "histsComponent": {
+          "header": "Your Password Must Contain :",
+          "paragraph": "It’s better to have :",
+          "hintOne": "8 characters at least",
+          "hintTwo": "At least one digit",
+          "hintThree": "Upper & lower case letters",
+          "hintFour": "Special Character (#&@)"
+        },
+        "button": "Continue",
+        "errors": {
+          "requiredCompany": "Company name is required *",
+          "companyMinLength": "Company name can’t be less than 2 characters *",
+          "companySpaces": "Company name mustn't contain consecutive spaces *",
+          "requiredEmail": "Email is required *",
+          "emailFormat": "Email must be like (e.g.user@example.com) or (user@example.com) *",
+          "requiredPassword": "Password is required *",
+          "notMatch": "Passwords don't match *",
+          "companySpecial": "Not allowed special char *"
+        }
+      },
+      "company-file": {
+        "header": "Please Upload Company Files",
+        "paragraph": "Type of files we need:",
+        "span": "Commercial register , Tax card , Other files",
+        "commercial": "Commercial Register",
+        "uploadHints": "Supported formats: PNG,PDF,JPG",
+        "tax": "Tax Card",
+        "more": "More Files",
+        "moreSpan": "(Optional)",
+        "moreParagraph": "Drag & drop files or click here",
+        "moreHints": "Supported formats: CSV, XLS, XLSX,PDF,Docx",
+        "upload": "Upload",
+        "uploading": "Uploading...",
+        "button": "Upload Files"
+      }
+    },
+    "sign-in": {
+      "details": {
+        "header": "Sign in to your account",
+        "paragraph": "Welcome back! Please enter your details.",
+        "label": "Your phone number or ID number",
+        "placeholder": "Enter your phone number or ID number",
+        "button": "Continue",
+        "footer": {
+          "pOne": "Don't have an account?",
+          "pTwo": "Sign up"
+        }
+      },
+      "identity": {
+        "header": "Verify your identity",
+        "paragraph": "Select a way to get the verification code.",
+        "phone": "Get a verification code at ",
+        "app": "Get a verification code through your authenticator app"
+      },
+      "companies": {
+        "header": "Choose your company",
+        "paragraph": "List of companies linked with phone number "
+      },
+      "companyPassword": {
+        "header": "Enter Password",
+        "paragraph": "Enter your password for ",
+        "span": "Zendesk.",
+        "password": "Password",
+        "passwordPlaceholder": "Enter your password",
+        "remember": "Remember Me",
+        "forgot": "Forgot Password",
+        "button": "Sign In",
+        "requiredPassword": " Please Enter Your Password *"
+      },
+      "counter": {
+        "paragraph": {
+          "pOne": "Your account on ",
+          "main": " has been disabled for 10 minutes because you failed to enter the correct password three (3) times in a row. Please wait and try again later when the restricted time is up or reset your password by clicking Forgot password.",
+          "span": "Zendesk"
+        },
+        "label": "Waiting time to login again :",
+        "forgot": "Forgot Password",
+        "button": "Sign in again",
+        "time": {
+          "minutes": "Minutes",
+          "seconds": "Seconds",
+          "hours": "Hours"
+        },
+        "footer": {
+          "pOne": "Didn't get a code?",
+          "pTwo": "Sign up"
+        }
+      },
+      "blocking": {
+        "paragraph": {
+          "pOne": "Your account for ",
+          "span": "Zendesk",
+          "pTwo": "has been permanently blocked because you failed to enter the correct password multiple times in a row. Please reset your password using your email to regain access to your account."
+        },
+        "button": "Reset Your Password"
+      }
+    },
+
+    "password-reset": {
+      "email": {
+        "header": "Forgot Password",
+        "paragraph": {
+          "pOne": "Enter your e-mail address associated with ",
+          "span": "ZenDisk",
+          "pTwo": " to receive your verification code."
+        },
+        "label": "Enter Email address",
+        "placeholder": "Enter your email address",
+        "button": "Continue",
+        "emailFormat": "Email must be like (e.g.user@example.com) or (user@example.com) *"
+      },
+      "reset": {
+        "header": "Reset your password",
+        "paragraph": "Enter new password and confirm the new password for ",
+        "span": "ZenDisk.",
+        "button": "Reset Password"
+      }
+    },
+    "timeOut": {
+      "header": "Unfortunately , Time Out",
+      "paragraph": "It seems your session has expired, and your data hasn't been saved.",
+      "span": "Please re-enter your information.",
+      "button": "Go Back"
+    },
+    "otp": {
+      "back": "Back",
+      "phone": "Please check your phone",
+      "email": "Please check your email",
+      "auth": "Check authenticator app",
+      "code": "We’ve sent a code to",
+      "footer": {
+        "pOne": "Didn’t get a code?",
+        "pTwo": "Send the verification code again"
+      },
+      "button": "Verify"
+    },
+    "verified": {
+      "head": {
+        "successLogin": "Logged in successfully",
+        "uploadFile": "Files Uploaded successfully !",
+        "passReset": "Password reset successfully",
+        "verified": "Verified successfully !"
+      },
+      "body": {
+        "userSignUp": {
+          "message": "You have successfully created your profile. You will now need to verify your email address to get started.",
+          "button": "Create a Company Profile"
+        },
+        "companySignUp": {
+          "message": {
+            "pOne": "The company Profile has been successfully created.",
+            "pTwo": "Please upload the following files :"
+          },
+          "span": "Commercial register , Tax card",
+          "button": "Upload Files"
+        },
+        "uploadFiles": {
+          "message": {
+            "pOne": "Account information is being reviewed Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "pTwo": " Need Help :"
+          },
+          "spanOne": "Need Help :",
+          "spanTwo": "Hello@Hrsystem.com"
+        },
+        "activateAccount": {
+          "message": "You may now go to the subscription page to choose the plan that suits your needs.",
+          "button": "Go to Subscription page"
+        },
+        "logIn": {
+          "message": "You will be directed to Sign In."
+        },
+        "passReset": {
+          "message": "You can now reset your password and log in again.",
+          "button": "Reset my Password"
+        },
+        "successReset": {
+          "message": "You will be directed to Sign In."
+        }
+      }
+    },
+    "back": "Back"
+  }
+}

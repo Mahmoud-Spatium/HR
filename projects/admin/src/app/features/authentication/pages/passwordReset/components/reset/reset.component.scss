@@ -1,0 +1,18 @@
+@import "../../../../../../../style/authentication/placeholder";
+
+.reset {
+  @extend %container;
+  h1 {
+    @extend %header;
+  }
+  p {
+    @extend %paragraph;
+    white-space: wrap;
+  }
+  a {
+    @extend %backLink;
+  }
+  span {
+    @extend %link;
+  }
+}

@@ -1,0 +1,67 @@
+<section class="verification" [dir]="'dir' | translate">
+  <a [routerLink]="back"
+    ><img
+      src="../../../../../../../assets/images/authentication/arrow-left.svg"
+      alt=""
+    />
+    <span>{{ "authentication.back" | translate }}</span></a
+  >
+  <header>
+    <h1>
+      @if (way === "phone") {
+        {{ "authentication.otp.phone" | translate }}
+      } @else if (way === "email") {
+        {{ "authentication.otp.email" | translate }}
+      } @else {
+        {{ "authentication.otp.auth" | translate }}
+      }
+    </h1>
+    @if (way !== "auth") {
+      <p>
+        {{ "authentication.otp.code" | translate }}
+        <span>
+          @if (way === "phone") {
+            @if (verified.includes(".")) {
+              (+{{ verified.split(".")[0] }}) {{ verified.split(".")[1] }}
+            } @else {
+              {{ verified }}
+            }
+          } @else {
+            {{ verified }}
+          }
+        </span>
+      </p>
+    }
+  </header>
+  <div>
+    <form class="code" [formGroup]="otpForm" otp>
+      <input type="number" formControlName="code1" />
+      <input type="number" formControlName="code2" />
+      <input type="number" formControlName="code3" />
+      <input type="number" formControlName="code4" />
+      <input type="number" formControlName="code5" />
+      <input type="number" formControlName="code6" />
+    </form>
+  </div>
+  <p>
+    {{ "authentication.otp.footer.pOne" | translate }}
+    <a
+      [ngClass]="{ disableResend: disableResend() }"
+      (click)="disableResend() ? $event.preventDefault() : onResend()"
+      >{{ "authentication.otp.footer.pTwo" | translate }}</a
+    >
+  </p>
+  <button
+    (click)="onSubmit()"
+    [disabled]="otpForm.invalid || loading()"
+    [ngClass]="{
+      'not-allow': otpForm.invalid || loading()
+    }"
+  >
+    @if (!loading()) {
+      {{ "authentication.otp.button" | translate }}
+    } @else {
+      <app-loader />
+    }
+  </button>
+</section>

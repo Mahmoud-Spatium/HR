@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-center content" [dir]="'dir' | translate">
+  <section class="companies">
+    <header>
+      <h1>{{ "authentication.sign-in.companies.header" | translate }}</h1>
+      <p>
+        {{ "authentication.sign-in.companies.paragraph" | translate }}
+        {{ phone() }}
+      </p>
+    </header>
+    <div class="companies-list">
+      @for (company of userCompany(); track $index) {
+        <div class="company" (click)="navigate(company.companyId)">
+          <figure>
+            <img
+              src="../../../../../../../assets/images/authentication/company1.svg"
+              alt=""
+            />
+          </figure>
+          <div>
+            <p>
+              {{ company.companyName
+              }}<span>{{
+                company.parentCompanyName
+                  ? "Subsidiary to " + company.parentCompanyName
+                  : "Main Company"
+              }}</span>
+            </p>
+            <span>{{ company.accountRoleName }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+</div>

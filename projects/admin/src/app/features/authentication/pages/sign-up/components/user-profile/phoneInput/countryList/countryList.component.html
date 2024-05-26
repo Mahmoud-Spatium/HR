@@ -1,0 +1,46 @@
+<div class="countries-list" [dir]="'dir' | translate">
+  <div class="search opened">
+    <img
+      src="../../../../assets/images/authentication/Icon.svg"
+      alt=""
+      class="opened"
+    />
+    <input
+      name="selectedCounty"
+      [placeholder]="'authentication.sign-up.user-profile.search' | translate"
+      class="opened"
+      (input)="onSearch($event)"
+      #input
+    />
+  </div>
+  <!-- if no results and the search field is not empty -->
+  @if (filterCountries?.length === 0 && input.value !== "") {
+    <div class="no-results">
+      <img
+        src="../../../../../assets/images/authentication/no-results.png"
+        alt=""
+      />
+      <p>
+        {{ "authentication.sign-up.user-profile.errors.noCountry" | translate }}
+      </p>
+    </div>
+  } @else {
+    <ul>
+      <!-- if search field is empty loop over all countries else loop over filtered countries -->
+      @for (
+        country of input.value === "" ? allCountries : filterCountries;
+        track $index
+      ) {
+        <li (click)="onSelected(country)">
+          <img [src]="country.image" alt="" />
+          <span class="mx-2">{{
+            language === "ar" ? country.arName : country.name
+          }}</span>
+          (<span
+            ><span>+</span> <span>{{ country.code }}</span></span
+          >)
+        </li>
+      }
+    </ul>
+  }
+</div>

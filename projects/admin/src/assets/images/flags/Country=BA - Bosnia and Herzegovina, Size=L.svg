@@ -1,0 +1,28 @@
+<svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_230_28335)">
+<mask id="mask0_230_28335" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="24">
+<rect width="34" height="24" fill="white"/>
+</mask>
+<g mask="url(#mask0_230_28335)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H32V24H0V0Z" fill="#2E42A5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9 0H29V24L9 0Z" fill="#FECA00"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.10719 2.79378L4.93162 3.41181L5.15613 2.10279L4.20508 1.17574L5.51941 0.984761L6.10719 -0.206223L6.69498 0.984761L8.0093 1.17574L7.05825 2.10279L7.28276 3.41181L6.10719 2.79378Z" fill="#F7FCFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.59352 7.07391L8.41795 7.69195L8.64246 6.38293L7.69141 5.45588L9.00573 5.2649L9.59352 4.07391L10.1813 5.2649L11.4956 5.45588L10.5446 6.38293L10.7691 7.69195L9.59352 7.07391Z" fill="#F7FCFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.8631 11.2384L11.6875 11.8565L11.912 10.5475L10.9609 9.62042L12.2753 9.42943L12.8631 8.23845L13.4508 9.42943L14.7652 9.62042L13.8141 10.5475L14.0386 11.8565L12.8631 11.2384Z" fill="#F7FCFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.0642 15.2292L14.8887 15.8473L15.1132 14.5383L14.1621 13.6112L15.4764 13.4202L16.0642 12.2292L16.652 13.4202L17.9663 13.6112L17.0153 14.5383L17.2398 15.8473L16.0642 15.2292Z" fill="#F7FCFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.5134 19.3368L18.3379 19.9548L18.5624 18.6458L17.6113 17.7187L18.9257 17.5278L19.5134 16.3368L20.1012 17.5278L21.4156 17.7187L20.4645 18.6458L20.689 19.9548L19.5134 19.3368Z" fill="#F7FCFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M23.3259 23.311L22.1504 23.9291L22.3749 22.6201L21.4238 21.693L22.7382 21.502L23.3259 20.311L23.9137 21.502L25.2281 21.693L24.277 22.6201L24.5015 23.9291L23.3259 23.311Z" fill="#F7FCFF"/>
+</g>
+<rect width="32" height="24" fill="url(#paint0_linear_230_28335)" style="mix-blend-mode:overlay"/>
+</g>
+<rect x="0.5" y="0.5" width="31" height="23" rx="1.5" stroke="black" stroke-opacity="0.1"/>
+<defs>
+<linearGradient id="paint0_linear_230_28335" x1="16" y1="0" x2="16" y2="24" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.7"/>
+<stop offset="1" stop-opacity="0.3"/>
+</linearGradient>
+<clipPath id="clip0_230_28335">
+<rect width="32" height="24" rx="2" fill="white"/>
+</clipPath>
+</defs>
+</svg>

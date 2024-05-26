@@ -1,0 +1,93 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.company-details{
+    width: 420px;
+    border-radius: 36px;
+    background-color: #fff;
+    padding: 40px;
+    transition: width 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+.head{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.head h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+.head a{
+    font-size: 14px;
+    font-weight: 500;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+.text p:first-child{
+    font-weight: 700;
+    color: #101218;
+}
+.text p:nth-child(2){
+    font-size: 14px;
+    
+    color: #64748B;
+}
+.member{
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+}
+.member img{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+.member-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+@media screen and (max-width: 1200px) and (min-width:992px) {
+
+}
+
+@media screen and (max-width: 992px) and (min-width:786px) {
+
+
+
+}
+
+@media screen and (max-width: 786px) and (min-width:600px) {
+   
+}
+
+@media screen and (max-width: 600px) {
+    .head-company-card{
+        width: 90%;
+        margin: auto;
+    }
+    .head{
+        flex-direction: column;
+        row-gap: 12px;
+    }
+    .head h3{
+        font-size: 16px;
+        
+    }
+    .text p:first-child{
+       font-size: 14px;
+    }
+    .text p:nth-child(2){
+        font-size: 12px;
+
+    }
+}

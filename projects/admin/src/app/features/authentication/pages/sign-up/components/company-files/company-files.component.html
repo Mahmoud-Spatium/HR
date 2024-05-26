@@ -1,0 +1,230 @@
+<section class="cFiles" [dir]="'dir' | translate">
+  <header>
+    <h1>{{ "authentication.sign-up.company-file.header" | translate }}</h1>
+    <p>
+      {{ "authentication.sign-up.company-file.paragraph" | translate }}
+      <span>{{ "authentication.sign-up.company-file.span" | translate }}</span>
+    </p>
+  </header>
+  <form>
+    <!-- register container -->
+    <div
+      class="register"
+      (dragover)="$event.preventDefault()"
+      (dragleave)="$event.preventDefault()"
+      (drop)="$event.preventDefault()"
+    >
+      <p>
+        {{ "authentication.sign-up.company-file.commercial" | translate }}
+        <span>*</span>
+      </p>
+      @if (registerProgress() === 0) {
+        <div
+          class="mb-1 initial"
+          (click)="fileOne.click()"
+          (dragover)="$event.preventDefault()"
+          (dragleave)="$event.preventDefault()"
+          (drop)="uploadFile($event)"
+        >
+          <input
+            type="file"
+            name=""
+            id="register"
+            class="d-none"
+            #fileOne
+            (change)="uploadFile($event)"
+            accept=".png,.pdf,.jpg"
+          />
+          <img
+            src="../../../../../../../assets/images/authentication/Upload icon.svg"
+            alt=""
+          />
+        </div>
+      }
+
+      @if (registerProgress() < 90 && registerProgress() > 0) {
+        <app-upload
+          [name]="registerFile.name"
+          (cancel)="[registerProgress.set(0)]"
+        />
+        <div class="progress">
+          <div
+            class="bar"
+            [ngStyle]="{ width: registerProgress() + '%' }"
+            #bar
+          ></div>
+          <p>
+            {{ "authentication.sign-up.company-file.uploading" | translate }}
+          </p>
+        </div>
+      }
+
+      @if (registerProgress() >= 100) {
+        <app-loaded
+          [file]="registerFile"
+          (cancel)="[registerProgress.set(0)]"
+        />
+      }
+      <p class="mt-1">
+        {{ "authentication.sign-up.company-file.uploadHints" | translate }}
+      </p>
+    </div>
+
+    <!-- tax container -->
+    <div
+      class="tax"
+      (dragover)="$event.preventDefault()"
+      (dragleave)="$event.preventDefault()"
+      (drop)="$event.preventDefault()"
+    >
+      <p>
+        {{ "authentication.sign-up.company-file.tax" | translate }}
+        <span>*</span>
+      </p>
+      @if (taxProgress() === 0) {
+        <div
+          class="mb-1 initial"
+          (click)="fileTwo.click()"
+          (dragover)="$event.preventDefault()"
+          (dragleave)="$event.preventDefault()"
+          (drop)="uploadFile($event)"
+        >
+          <input
+            type="file"
+            name=""
+            id="tax"
+            class="d-none"
+            #fileTwo
+            (change)="uploadFile($event)"
+            accept=".png,.pdf,.jpg"
+          />
+          <img
+            src="../../../../../../../assets/images/authentication/Upload icon.svg"
+            alt=""
+          />
+        </div>
+      }
+
+      @if (taxProgress() < 90 && taxProgress() > 0) {
+        <app-upload [name]="taxFile.name" (cancel)="[taxProgress.set(0)]" />
+        <div class="progress">
+          <div class="bar" [ngStyle]="{ width: taxProgress() + '%' }"></div>
+          <p>
+            {{ "authentication.sign-up.company-file.uploading" | translate }}
+          </p>
+        </div>
+      }
+
+      @if (taxProgress() >= 100) {
+        <app-loaded [file]="taxFile" (cancel)="[taxProgress.set(0)]" />
+      }
+      <p class="mt-1">
+        {{ "authentication.sign-up.company-file.uploadHints" | translate }}
+      </p>
+    </div>
+
+    <!-- more documents container -->
+    <div
+      class="more text-center"
+      (dragover)="$event.preventDefault()"
+      (dragleave)="$event.preventDefault()"
+      (drop)="$event.preventDefault()"
+    >
+      <p>
+        {{ "authentication.sign-up.company-file.more" | translate }}
+        <span>{{
+          "authentication.sign-up.company-file.moreSpan" | translate
+        }}</span>
+      </p>
+      <div
+        (click)="fileThree.click()"
+        class="initial"
+        (dragover)="$event.preventDefault()"
+        (dragleave)="$event.preventDefault()"
+        (drop)="bulkFiles($event)"
+      >
+        <input
+          type="file"
+          name=""
+          id="more"
+          class="d-none"
+          multiple
+          #fileThree
+          (change)="bulkFiles($event)"
+          accept=".csv,.xlsx,.xls,.doc,.docs,.pdf,.txt,.xml,.ppt,.jpg,.png"
+        />
+        <img
+          src="../../../../../../../assets/images/authentication/Upload icon.svg"
+          alt=""
+          class="mb-3"
+        />
+        <p class="mb-1">
+          {{ "authentication.sign-up.company-file.moreParagraph" | translate }}
+          <span>
+            {{ "authentication.sign-up.company-file.upload" | translate }}</span
+          >
+        </p>
+        <p>
+          {{ "authentication.sign-up.company-file.moreHints" | translate }}
+        </p>
+      </div>
+      <!-- styling for load state -->
+      @if (bulkProgress() < 90 && bulkProgress() > 0) {
+        <div class="progress">
+          <div class="bar" [ngStyle]="{ width: bulkProgress() + '%' }"></div>
+          <p>
+            {{ "authentication.sign-up.company-file.uploading" | translate }}
+          </p>
+        </div>
+      }
+    </div>
+
+    <!-- list of uploaded files -->
+    <div>
+      @for (file of filesUploaded; track $index) {
+        <!-- content based on load state -->
+        <app-upload
+          [name]="file?.name + '-' + $index"
+          parent="more"
+          (cancel)="
+            [filesUploaded.splice($index, 1), bulkProgress.set(0), resendBulk()]
+          "
+        />
+      }
+
+      @for (file of filesLoaded; track $index) {
+        <!-- conatent based on loaded state -->
+        <app-loaded
+          [file]="file"
+          parent="more"
+          (cancel)="filesLoaded.splice($index, 1)"
+        />
+      }
+    </div>
+
+    <button
+      [ngClass]="{
+        'not-allow':
+          !filesForm.valid ||
+          taxProgress() < 90 ||
+          registerProgress() < 90 ||
+          filesUploaded.length > 0 ||
+          loading()
+      }"
+      [disabled]="
+        !filesForm.valid ||
+        taxProgress() < 90 ||
+        registerProgress() < 90 ||
+        filesUploaded.length > 0 ||
+        loading()
+      "
+      (click)="[onNavigate(), $event.preventDefault()]"
+    >
+      @if (loading()) {
+        <app-loader />
+      } @else {
+        {{ "authentication.sign-up.company-file.button" | translate }}
+      }
+    </button>
+  </form>
+</section>

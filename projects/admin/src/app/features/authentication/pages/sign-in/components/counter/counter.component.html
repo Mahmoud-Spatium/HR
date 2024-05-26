@@ -1,0 +1,52 @@
+<section class="counter" [dir]="'dir' | translate">
+  <p>
+    {{ "authentication.sign-in.counter.paragraph.pOne" | translate }}
+    <span>{{
+      "authentication.sign-in.counter.paragraph.span" | translate
+    }}</span>
+    {{ "authentication.sign-in.counter.paragraph.main" | translate }}
+  </p>
+  <div>
+    <p>{{ "authentication.sign-in.counter.label" | translate }}</p>
+    <div class="count">
+      <div>
+        <p>{{ date.hour }}</p>
+        <span>{{
+          "authentication.sign-in.counter.time.hours" | translate
+        }}</span>
+      </div>
+      <p>:</p>
+      <div>
+        <p>
+          {{ date.minutes }}
+        </p>
+        <span>{{
+          "authentication.sign-in.counter.time.minutes" | translate
+        }}</span>
+      </div>
+      <p>:</p>
+      <div>
+        <p>{{ date.second }}</p>
+        <span>{{
+          "authentication.sign-in.counter.time.seconds" | translate
+        }}</span>
+      </div>
+    </div>
+    <a routerLink="/passwordReset/email">{{
+      "authentication.sign-in.counter.forgot" | translate
+    }}</a>
+  </div>
+  <button
+    [disabled]="disabled === true"
+    [ngClass]="{ 'not-allow': disabled === true }"
+    (click)="navigate()"
+  >
+    {{ "authentication.sign-in.counter.button" | translate }}
+  </button>
+  <p>
+    {{ "authentication.sign-in.counter.footer.pOne" | translate
+    }}<a routerLink="/sign-up">{{
+      "authentication.sign-in.counter.footer.pTwo" | translate
+    }}</a>
+  </p>
+</section>

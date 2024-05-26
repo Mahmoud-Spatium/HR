@@ -1,0 +1,19 @@
+<div class="countries-list">
+  <div class="search opened">
+    <img
+      src="https://cdn3.iconfinder.com/data/icons/feather-5/24/search-512.png"
+      alt=""
+      class="opened"
+    />
+    <input name="selectedCounty" placeholder="Search" class="opened" />
+  </div>
+  <ul>
+    @for (country of countries; track $index) {
+      <li>
+        <img [src]="country.image" alt="" />
+        <span>{{ country.name }}</span>
+        <span>{{ country.code }}</span>
+      </li>
+    }
+  </ul>
+</div>

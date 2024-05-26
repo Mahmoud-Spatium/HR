@@ -1,0 +1,20 @@
+<div class="upload mb-1">
+  <div class="loadFile">
+    <figure>
+      <img
+        src="../../../../../../../assets/images/authentication/load-icon.svg"
+        alt=""
+      />
+    </figure>
+    <p>{{ name() }}</p>
+  </div>
+  <img
+    src="../../../.../../../../../../assets/images/authentication/x.svg"
+    alt=""
+    (click)="
+      parent() === 'more'
+        ? cancel.emit(name().split('-')[1])
+        : cancel.emit(true)
+    "
+  />
+</div>

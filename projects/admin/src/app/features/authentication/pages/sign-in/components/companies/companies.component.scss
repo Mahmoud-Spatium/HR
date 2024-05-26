@@ -1,0 +1,103 @@
+@import "../../../../../../../style/authentication/placeholder";
+.content {
+  min-height: calc(100vh - calc(88rem / 16));
+  header {
+    margin-bottom: calc(40rem / 16);
+    text-align: center;
+    p {
+      @extend %paragraph;
+      margin-top: calc(16rem / 16);
+      font-size: clamp(calc(14rem / 16), 4vw, calc(16rem / 16));
+      white-space: wrap;
+      text-align: center;
+    }
+  }
+  h1 {
+    @extend %header;
+    text-align: center;
+  }
+  .companies {
+    position: absolute;
+    width: min(95%, 463rem / 16);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .companies-list {
+    overflow-y: scroll;
+    max-height: 340px;
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #edf0f2;
+      border-radius: 20px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #0acba7;
+      border-radius: 20px;
+    }
+    @-moz-document url-prefix() {
+      scrollbar-width: 10px;
+      scrollbar-color: #0acba7 #edf0f2;
+    }
+  }
+  .company {
+    & {
+      background-color: white;
+      border-radius: calc(24rem / 16);
+      border: 1px solid #edf0f2;
+      padding: calc(16rem / 16);
+      display: flex;
+      align-items: center;
+      gap: calc(16rem / 16);
+      margin: 0px calc(16rem / 16) calc(20rem / 16);
+      cursor: pointer;
+    }
+    p {
+      font-size: var(--large);
+      font-weight: 500;
+      line-height: calc(32rem / 16);
+      text-align: center;
+      margin: calc(4rem / 16) 0px;
+      span {
+        font-size: var(--small);
+        margin-left: calc(8rem / 16);
+        padding: calc(2rem / 16) calc(8rem / 16);
+        background-color: #d2fbe7;
+        border-radius: 360px;
+        text-wrap: nowrap;
+      }
+    }
+    span {
+      font-size: var(--medium);
+    }
+
+    figure {
+      width: calc(64rem / 16);
+      height: calc(64rem / 16);
+      border-radius: calc(360rem / 16);
+      background-color: #edf0f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0px;
+      @media screen and (max-width: 500px) {
+        & {
+          width: calc(45rem / 16);
+          height: calc(45rem / 16);
+        }
+        & img {
+          width: calc(25rem / 16);
+          height: calc(25rem / 16);
+        }
+      }
+    }
+  }
+}

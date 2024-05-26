@@ -1,0 +1,48 @@
+main {
+  & {
+    display: flex;
+    height: calc(100vh - 88px);
+    align-items: center;
+    overflow-x: hidden;
+  }
+  .left-side {
+    & {
+      flex: 1;
+      height: 100%;
+      background-color: #edf2f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      left: 0;
+    }
+    @media (max-width: 1200px) {
+      & {
+        display: none;
+      }
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  .right-side {
+    & {
+      height: 100%;
+      flex: 1;
+      position: relative;
+      background-color: #f6f7f9;
+    }
+    @media (max-width: 500px) {
+      & {
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
+    }
+    @media (max-width: 991px) {
+      & {
+        width: 100%;
+      }
+    }
+  }
+}

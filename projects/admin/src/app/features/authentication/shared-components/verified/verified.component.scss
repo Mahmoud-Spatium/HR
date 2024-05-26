@@ -1,0 +1,58 @@
+@import "../../../../../style/authentication/placeholder";
+.verified {
+  min-height: calc(100vh - calc(88rem / 16));
+  max-width: 100vw;
+  background-color: #f6f7f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min(calc(600rem / 16), 90%);
+    min-height: calc(500rem / 16);
+    top: calc(196rem / 16);
+    left: calc(560rem / 16);
+    padding: calc(25rem / 16) calc(20rem / 16);
+    gap: calc(12rem / 16);
+    border-radius: calc(36rem / 16);
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background-color: #ffffff;
+    img {
+      max-width: 100%;
+    }
+  }
+  p {
+    font-size: var(--h4);
+    font-weight: 700;
+    line-height: calc(41.6rem / 16);
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #101218;
+    margin: 0;
+  }
+  figure:last-of-type {
+    margin-top: calc(20rem / 16);
+    img {
+      max-height: calc(300rem / 16);
+    }
+    & + p {
+      font-size: var(--medium);
+      font-weight: 600;
+      max-width: calc(500rem / 16);
+      line-height: calc(32rem / 16);
+      text-align: center;
+      color: #101218;
+    }
+  }
+  span:not(.help) {
+    color: #0acba7;
+  }
+  button {
+    @extend %button;
+    margin-top: 0;
+  }
+}

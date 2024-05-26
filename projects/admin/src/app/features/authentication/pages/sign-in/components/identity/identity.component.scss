@@ -1,0 +1,47 @@
+@import "../../../../../.././../style/authentication/placeholder";
+
+.identity {
+  & {
+    @extend %container;
+  }
+  h1 {
+    @extend %header;
+  }
+  p {
+    @extend %paragraph;
+  }
+  a {
+    & {
+      @extend %backLink;
+    }
+    img:not(a > img) {
+      margin-right: 8px;
+    }
+  }
+  div {
+    & {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 24px;
+      padding: calc(24rem / 16);
+      gap: calc(5rem / 16);
+      cursor: pointer;
+    }
+    p {
+      margin: 0;
+      font-size: clamp(calc(12rem / 16), 3vw, calc(16rem / 16));
+      font-weight: 500;
+      line-height: clamp(calc(20rem / 16), 4vw, calc(24rem / 16));
+      color: #101218;
+      margin: 0px 5px;
+      text-align: start;
+      width: 80%;
+      white-space: wrap;
+    }
+    a {
+      display: block;
+      margin-left: auto;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<header>
+  <div class="content">
+    <a>{{ "header.services" | translate }}</a>
+    <a>{{ "header.faq" | translate }}</a>
+    <!-- drop down start  -->
+    <p-dropdown
+      (onChange)="onChange($event)"
+      [options]="countries"
+      [(ngModel)]="selectedCountry"
+      placeholder="Select a Country"
+    >
+      <ng-template pTemplate="dropdownicon">
+        <img
+          alt="dropdown icon"
+          src="../../../../assets/images/languages/caret-down.svg"
+        />
+      </ng-template>
+
+      <ng-template pTemplate="selectedItem">
+        <div class="d-flex align-items-center gap-2" *ngIf="selectedCountry">
+          <img [src]="selectedCountry.image" style="width: 18px" />
+          <div class="lang">{{ selectedCountry.lang }}</div>
+        </div>
+      </ng-template>
+      <ng-template let-country pTemplate="item">
+        <div class="d-flex align-items-center gap-2">
+          <img [src]="country.image" style="width: 18px" />
+          <div class="lang">{{ country.lang }}</div>
+        </div>
+      </ng-template>
+      <ng-template let-country pTemplate="item">
+        <div class="d-flex align-items-center gap-2">
+          <img [src]="country.image" style="width: 18px" />
+          <div class="lang">{{ country.lang }}</div>
+        </div>
+      </ng-template>
+    </p-dropdown>
+    <!-- drop down end  -->
+  </div>
+</header>

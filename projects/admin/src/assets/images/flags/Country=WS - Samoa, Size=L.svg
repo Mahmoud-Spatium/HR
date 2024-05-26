@@ -1,0 +1,32 @@
+<svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_230_22316)">
+<mask id="mask0_230_22316" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="24">
+<rect width="32" height="24" fill="white"/>
+</mask>
+<g mask="url(#mask0_230_22316)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V24H32V0H0Z" fill="#C51918"/>
+<mask id="mask1_230_22316" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="24">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V24H32V0H0Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_230_22316)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V14H16V0H0Z" fill="#2E42A5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.56625 7.77177L2.5062 8.41172L2.74799 7.16292L1.86523 6.22832L3.06054 6.17779L3.56625 5.01172L4.07196 6.17779H5.26523L4.38451 7.16292L4.64966 8.41172L3.56625 7.77177Z" fill="#FEFFFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.5663 7.77177L10.5062 8.41172L10.748 7.16292L9.86523 6.22832L11.0605 6.17779L11.5663 5.01172L12.072 6.17779H13.2652L12.3845 7.16292L12.6497 8.41172L11.5663 7.77177Z" fill="#FEFFFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.46619 4.13798L6.4685 4.74028L6.69607 3.56495L5.86523 2.68532L6.99023 2.63776L7.46619 1.54028L7.94215 2.63776H9.06523L8.23632 3.56495L8.48587 4.74028L7.46619 4.13798Z" fill="#FEFFFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.54552 8.4252L7.92196 8.80164L8.06419 8.06705L7.54492 7.51728L8.24804 7.48756L8.54552 6.80164L8.843 7.48756H9.54492L9.02685 8.06705L9.18282 8.80164L8.54552 8.4252Z" fill="#FEFFFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.40925 12.8283L5.91271 13.7318L6.25406 11.9688L5.00781 10.6493L6.6953 10.578L7.40925 8.93176L8.12319 10.578H9.80781L8.56443 11.9688L8.93877 13.7318L7.40925 12.8283Z" fill="#FEFFFF"/>
+</g>
+</g>
+<rect width="32" height="24" fill="url(#paint0_linear_230_22316)" style="mix-blend-mode:overlay"/>
+</g>
+<rect x="0.5" y="0.5" width="31" height="23" rx="1.5" stroke="black" stroke-opacity="0.1"/>
+<defs>
+<linearGradient id="paint0_linear_230_22316" x1="16" y1="0" x2="16" y2="24" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.7"/>
+<stop offset="1" stop-opacity="0.3"/>
+</linearGradient>
+<clipPath id="clip0_230_22316">
+<rect width="32" height="24" rx="2" fill="white"/>
+</clipPath>
+</defs>
+</svg>

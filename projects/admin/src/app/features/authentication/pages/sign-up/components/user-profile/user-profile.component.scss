@@ -1,0 +1,48 @@
+@import "../../../../../../../style/authentication/placeholder";
+.user-profile {
+  & {
+    @extend %container;
+  }
+  label {
+    @extend %label;
+  }
+  input {
+    @extend %input;
+    margin-bottom: 25px;
+  }
+  h1 {
+    @extend %header;
+  }
+  p {
+    @extend %paragraph;
+    a {
+      color: #0acba7;
+      margin: 0 calc(8rem / 16);
+    }
+  }
+  form + p {
+    text-align: center;
+  }
+  > a {
+    @extend %backLink;
+  }
+  &[dir="rtl"] > a {
+    img {
+      order: 2;
+    }
+    span {
+      order: 1;
+    }
+  }
+}
+
+// helpful classes
+.not-match {
+  position: relative;
+  top: -20px;
+  font-size: 14px;
+  color: red;
+}
+.not-match-confirm {
+  border-color: red !important;
+}

@@ -1,0 +1,54 @@
+@import "../../../../../../../style/authentication/placeholder";
+
+.details {
+  & {
+    @extend %container;
+  }
+  h1 {
+    @extend %header;
+  }
+  > a {
+    @extend %backLink;
+  }
+  p {
+    @extend %paragraph;
+  }
+  button {
+    @extend %button;
+  }
+  input {
+    @extend %input;
+  }
+  label {
+    @extend %label;
+  }
+  footer {
+    @extend %paragraph;
+    font-weight: 500;
+    text-align: center;
+  }
+  a {
+    @extend %link;
+  }
+}
+
+// styling for button if disabled
+.not-allow {
+  cursor: not-allowed !important;
+  background-color: #edf0f2 !important;
+  color: #b8c1cc !important;
+}
+
+.not-match {
+  @extend %not-match;
+  top: 0px;
+}
+.red-border {
+  border-color: red !important;
+}
+// styling the recaptcha
+.captcha {
+  display: flex;
+  justify-content: center;
+  margin: calc(20rem / 16) 0;
+}

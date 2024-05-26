@@ -1,0 +1,154 @@
+form {
+  & {
+    width: 100%;
+    position: relative;
+  }
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 23.8px;
+    text-align: start;
+    color: #101218;
+    margin-bottom: 6px;
+  }
+  input {
+    // remove the arrows from the input number
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    /* Firefox */
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+  button {
+    border-radius: 360px;
+    width: 100%;
+    background-color: #0acba7;
+    height: calc(50rem / 16);
+    font-weight: 700;
+    font-size: calc(16rem / 16);
+    color: white;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    margin: calc(10rem / 16) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// styling the phone drop down
+.phone {
+  & {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 360px;
+    overflow-x: hidden;
+    background-color: #fff;
+    border: 1px solid #edf0f2;
+    height: 50px;
+  }
+  input {
+    border: none;
+    margin: 0;
+    box-shadow: none;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: start;
+
+    &::placeholder {
+      color: #ccccccbd;
+      font-weight: 300;
+      font-size: 16px;
+    }
+  }
+  .selected-country {
+    & {
+      position: relative;
+      width: 72px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      height: 38px;
+      cursor: pointer;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 30px;
+      background-color: #edf0f2;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    &[dir="rtl"] {
+      &::after {
+        transform: translateY(-50%);
+      }
+    }
+    img:nth-of-type(1) {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+    }
+  }
+  .content {
+    & {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+    span {
+      padding-left: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: start;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      span {
+        padding: 0;
+      }
+      &[dir="rtl"] {
+        span {
+          order: -1;
+        }
+      }
+    }
+  }
+}
+
+// styling for button if disabled
+.not-allow {
+  cursor: not-allowed !important;
+  background-color: #edf0f2 !important;
+  color: #b8c1cc !important;
+}
+// not valid phone number
+.not-match {
+  position: relative;
+  top: -20px;
+  font-size: clamp(calc(12rem / 16), 2vw, calc(14rem / 16));
+  color: red;
+}
+.not-match-confirm {
+  border-color: red !important;
+}
+
+// styling the recaptcha
+.captcha {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}

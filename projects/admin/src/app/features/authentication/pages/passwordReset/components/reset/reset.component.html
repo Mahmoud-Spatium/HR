@@ -1,0 +1,17 @@
+<section class="reset" [dir]="'dir' | translate">
+  <a routerLink="/verified/resetPassword">
+    <img
+      src="../../../../../../../assets/images/authentication/arrow-left.svg"
+      alt=""
+    />
+    {{ "authentication.back" | translate }}
+  </a>
+  <header>
+    <h1>{{ "authentication.password-reset.reset.header" | translate }}</h1>
+    <p>
+      {{ "authentication.password-reset.reset.paragraph" | translate }}
+      <span>{{ "authentication.password-reset.reset.span" | translate }}</span>
+    </p>
+  </header>
+  <app-passwordInput parent="reset" />
+</section>

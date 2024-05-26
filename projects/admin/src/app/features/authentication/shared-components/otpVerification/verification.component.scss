@@ -1,0 +1,123 @@
+@import "../../../../../style/authentication/placeholder";
+
+.verification {
+  & {
+    @extend %container;
+  }
+  h1 {
+    @extend %header;
+    margin-bottom: 0;
+    font-size: clamp(calc(20rem / 16), 5vw, calc(32rem / 16));
+  }
+  p {
+    @extend %paragraph;
+    white-space: wrap;
+  }
+  span {
+    font-size: clamp(calc(14rem / 16), 4vw, calc(16rem / 16));
+    font-weight: 600;
+    line-height: calc(24rem / 16);
+  }
+  button {
+    @extend %button;
+    margin-top: 0;
+  }
+  &[dir="rtl"] a {
+    span {
+      order: -1;
+    }
+  }
+  a {
+    @extend %backLink;
+  }
+  div {
+    & + p {
+      & {
+        margin-bottom: 0;
+        @media screen and (max-width: calc(500rem / 16)) {
+          display: flex;
+          flex-direction: column;
+          gap: calc(5rem / 16);
+        }
+      }
+      a {
+        display: inline;
+        color: #0acba7;
+        cursor: pointer;
+      }
+    }
+  }
+  .code {
+    & {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    input {
+      width: calc(68rem / 16);
+      height: calc(68rem / 16);
+      border-radius: calc(24rem / 16);
+      border: 1px solid #64748b;
+      font-family: Plus Jakarta Sans;
+      font-size: calc(26rem / 16);
+      font-weight: 800;
+      line-height: calc(30.24rem / 16);
+      text-align: center;
+      // remove the arrows from the input number
+      /* Chrome, Safari, Edge, Opera */
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      /* Firefox */
+      &[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      // when foucs
+      &:focus {
+        border-color: #0acba7;
+        color: #0acba7;
+      }
+      // when disabled
+      &:disabled {
+        background-color: white;
+      }
+      @media screen and (max-width: calc(540rem / 16)) {
+        & {
+          width: calc(55rem / 16);
+          height: calc(55rem / 16);
+          font-size: calc(20rem / 16);
+          border-radius: calc(16rem / 16);
+        }
+      }
+      @media screen and (max-width: calc(420rem / 16)) {
+        & {
+          width: calc(48rem / 16);
+          height: calc(48rem / 16);
+          border-radius: calc(12rem / 16);
+        }
+      }
+      @media screen and (max-width: calc(350rem / 16)) {
+        & {
+          width: calc(42rem / 16);
+          height: calc(42rem / 16);
+          border-radius: calc(12rem / 16);
+        }
+      }
+    }
+  }
+}
+
+// styling for button if disabled
+.not-allow {
+  background-color: #edf0f2 !important;
+  color: #b8c1cc !important;
+  cursor: not-allowed !important;
+}
+
+.disableResend {
+  cursor: not-allowed !important;
+  color: #b8c1cc !important;
+}

@@ -1,0 +1,59 @@
+<section class="email" [dir]="'dir' | translate">
+  <a routerLink="/sign-in/enterPassword">
+    <img
+      src="../../../../../../../assets/images/authentication/arrow-left.svg"
+      alt=""
+    />
+    {{ "authentication.back" | translate }}</a
+  >
+  <header>
+    <h1>{{ "authentication.password-reset.email.header" | translate }}</h1>
+    <p>
+      {{ "authentication.password-reset.email.paragraph.pOne" | translate }}
+      <span>{{
+        "authentication.password-reset.email.paragraph.span" | translate
+      }}</span>
+      {{ "authentication.password-reset.email.paragraph.pTwo" | translate }}
+    </p>
+  </header>
+  <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+    <label for="email">{{
+      "authentication.password-reset.email.label" | translate
+    }}</label>
+    <input
+      placeholder="{{
+        'authentication.password-reset.email.placeholder' | translate
+      }}"
+      type="email"
+      name=""
+      id=""
+      formControlName="email"
+      [ngClass]="{
+        invalid: emailForm.invalid && emailForm.get('email')?.touched
+      }"
+    />
+    @if (emailForm.invalid && emailForm.get("email")?.touched) {
+      <span class="error mt-3">{{
+        "authentication.password-reset.email.emailFormat" | translate
+      }}</span>
+    }
+    <!-- google reCaptcha -->
+    <div class="captcha">
+      <re-captcha
+        (resolved)="resolved($event)"
+        siteKey="6Lc27pUpAAAAAGcgAjtGG7U4WDCqoc5kE_oxM4l8"
+      ></re-captcha>
+    </div>
+    <button
+      type="submit"
+      [disabled]="emailForm.invalid || captcha === '' || load()"
+      [ngClass]="{ 'not-allow': emailForm.invalid || captcha === '' || load() }"
+    >
+      @if (load()) {
+        <app-loader />
+      } @else {
+        {{ "authentication.password-reset.email.button" | translate }}
+      }
+    </button>
+  </form>
+</section>

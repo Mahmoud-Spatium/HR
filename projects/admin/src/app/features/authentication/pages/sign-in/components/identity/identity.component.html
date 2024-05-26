@@ -1,0 +1,45 @@
+<section class="identity" [dir]="'dir' | translate">
+  <a routerLink="/sign-in"
+    ><img
+      src="../../../../../../../assets/images/authentication/arrow-left.svg"
+      alt=""
+    />{{ "authentication.back" | translate }}</a
+  >
+  <header>
+    <h1>{{ "authentication.sign-in.identity.header" | translate }}</h1>
+    <p>{{ "authentication.sign-in.identity.paragraph" | translate }}</p>
+  </header>
+  @if (communicationServ.availableAuthWay().phone) {
+    <div class="phone" (click)="navigate()">
+      <img
+        src="../../../../../../../assets/images/authentication/message-text.svg"
+        alt=""
+      />
+      <p>
+        {{ "authentication.sign-in.identity.phone" | translate }}**** ****
+        {{ number.slice(-3) }}
+      </p>
+      <a [routerLink]="['/verification/', number]">
+        <img
+          src="../../../../../../../assets/images/authentication/arrow-right.svg"
+          alt=""
+        />
+      </a>
+    </div>
+  }
+  @if (communicationServ.availableAuthWay().authApp) {
+    <div class="authApp" (click)="navigate()">
+      <img
+        src="../../../../../../../assets/images/authentication/website.svg"
+        alt=""
+      />
+      <p>{{ "authentication.sign-in.identity.app" | translate }}</p>
+      <a>
+        <img
+          src="../../../../../../../assets/images/authentication/arrow-right.svg"
+          alt=""
+        />
+      </a>
+    </div>
+  }
+</section>

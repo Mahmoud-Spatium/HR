@@ -1,0 +1,93 @@
+<form [formGroup]="phoneFormGroup" class="mt-3">
+  <label for="mobile">{{
+    "authentication.sign-up.user-profile.phone" | translate
+  }}</label>
+  <div
+    class="phone"
+    [ngClass]="{
+      'not-match-confirm':
+        (phoneFormGroup.invalid && phoneFormGroup.get('phone')?.touched) ||
+        (phone.value.length < selectedCounty.length &&
+          phoneFormGroup.get('phone')?.touched)
+    }"
+  >
+    <div class="selected-country opened">
+      <img [src]="selectedCounty.image" alt="" class="opened" />
+      <img
+        src="../../../../assets/images/authentication/chevron-down.svg"
+        alt=""
+        class="opened"
+      />
+    </div>
+    <div class="content">
+      <span
+        >+ <span>{{ selectedCounty.code }}</span></span
+      >
+      <input
+        placeholder="xx-xxxx-xxxx"
+        type="number"
+        id="mobile"
+        class="form-control"
+        formControlName="phone"
+        #phone
+        (input)="onEnterPhone($event)"
+      />
+    </div>
+  </div>
+  <app-countryList
+    (selected)="onChangeSelected($event)"
+    openList
+    [allCountries]="countries"
+  />
+  <div>
+    @if (phone.value === "" && phoneFormGroup.get("phone")?.touched) {
+      <span class="not-match"
+        >{{
+          "authentication.sign-up.user-profile.errors.enterPhone" | translate
+        }}
+        *</span
+      >
+    } @else if (
+      phone.value.length < selectedCounty.length &&
+      phoneFormGroup.get("phone")?.touched
+    ) {
+      <span class="not-match"
+        >{{
+          "authentication.sign-up.user-profile.errors.invalidLength" | translate
+        }}
+        *</span
+      >
+    }
+    <!-- google reCaptcha -->
+    <div class="captcha">
+      <re-captcha
+        (resolved)="resolved($event)"
+        siteKey="6Lc27pUpAAAAAGcgAjtGG7U4WDCqoc5kE_oxM4l8"
+      ></re-captcha>
+    </div>
+    <button
+      (click)="onSubmit()"
+      [ngClass]="{
+        'not-allow':
+          phoneFormGroup.invalid ||
+          !captcha ||
+          !parentData.valid ||
+          number.length < selectedCounty.length ||
+          loading()
+      }"
+      [disabled]="
+        phoneFormGroup.invalid ||
+        !captcha ||
+        !parentData.valid ||
+        number.length < selectedCounty.length ||
+        loading()
+      "
+    >
+      @if (loading()) {
+        <app-loader />
+      } @else {
+        {{ "authentication.sign-up.user-profile.button" | translate }}
+      }
+    </button>
+  </div>
+</form>

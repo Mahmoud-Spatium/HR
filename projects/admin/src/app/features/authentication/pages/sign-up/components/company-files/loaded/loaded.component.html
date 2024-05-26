@@ -1,0 +1,29 @@
+<div class="loaded mb-1">
+  <div class="loadedFile">
+    <figure>
+      <img
+        src="../../../../.../../../.././../assets/images/authentication/file_type.svg"
+        alt=""
+      />
+      <span>{{ file().name.split(".")[1] }}</span>
+    </figure>
+    <div>
+      <p class="fileName mb-1">{{ file().name }}</p>
+      <p class="fileData">
+        {{ file().size / 1000 }} KB . {{ date() | date: "mediumDate" }}
+      </p>
+    </div>
+  </div>
+  <div class="icons d-flex gap-2">
+    <img
+      src="../../../../../../../assets/images/authentication/eye.svg"
+      alt=""
+      (click)="openFile()"
+    />
+    <img
+      src="../../../../../../../assets/images/authentication/trash.svg"
+      alt=""
+      (click)="parent() === 'more' ? cancel.emit(file().name) : cancel.emit(true)"
+    />
+  </div>
+</div>

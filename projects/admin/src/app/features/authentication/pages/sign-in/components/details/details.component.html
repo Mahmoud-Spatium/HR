@@ -1,0 +1,51 @@
+<section class="details" [dir]="'dir' | translate">
+  <a routerLink="/">
+    <img
+      src="../../../../../../../assets/images/authentication/arrow-left.svg"
+      alt=""
+    />
+    {{ "authentication.back" | translate }}
+  </a>
+  <header>
+    <h1>{{ "authentication.sign-in.details.header" | translate }}</h1>
+    <p>{{ "authentication.sign-in.details.paragraph" | translate }}</p>
+  </header>
+  <form [formGroup]="details">
+    <label for="details">{{
+      "authentication.sign-in.details.label" | translate
+    }}</label>
+    <input
+      placeholder="{{
+        'authentication.sign-in.details.placeholder' | translate
+      }}"
+      type="text"
+      id="details"
+      class="form-control"
+      formControlName="config"
+    />
+    <!-- google reCaptcha -->
+    <div class="captcha">
+      <re-captcha
+        (resolved)="resolved($event)"
+        siteKey="6Lc27pUpAAAAAGcgAjtGG7U4WDCqoc5kE_oxM4l8"
+      ></re-captcha>
+    </div>
+    <button
+      (click)="OnNext()"
+      [ngClass]="{ 'not-allow': details.invalid || captcha === '' || load }"
+      [disabled]="details.invalid || captcha === '' || load"
+    >
+      @if (load) {
+        <app-loader />
+      } @else {
+        {{ "authentication.sign-in.details.button" | translate }}
+      }
+    </button>
+  </form>
+  <footer>
+    {{ "authentication.sign-in.details.footer.pOne" | translate }}
+    <a routerLink="/sign-up">
+      {{ "authentication.sign-in.details.footer.pTwo" | translate }}</a
+    >
+  </footer>
+</section>

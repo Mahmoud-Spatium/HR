@@ -1,0 +1,96 @@
+<section class="company-profile" [dir]="'dir' | translate">
+  <header>
+    <h1>{{ "authentication.sign-up.company-profile.header" | translate }}</h1>
+    <p>{{ "authentication.sign-up.company-profile.paragraph" | translate }}</p>
+  </header>
+  <form [formGroup]="companyForm">
+    <label for="company">{{
+      "authentication.sign-up.company-profile.name" | translate
+    }}</label>
+    <input
+      id="company"
+      class="form-control"
+      formControlName="company"
+      placeholder="{{
+        'authentication.sign-up.company-profile.namePlaceholder' | translate
+      }}"
+      maxlength="50"
+      [ngClass]="{
+        'not-match-confirm':
+          companyForm.get('company')?.invalid &&
+          companyForm.get('company')?.touched
+      }"
+    />
+    @if (
+      companyForm.get("company")?.touched && companyForm.get("company")?.invalid
+    ) {
+      <span class="not-match d-block mb-1">
+        @if (this.companyForm.get("company")?.hasError("minlength")) {
+          {{
+            "authentication.sign-up.company-profile.errors.companyMinLength"
+              | translate
+          }}
+        } @else if (this.companyForm.get("company")?.hasError("required")) {
+          {{
+            "authentication.sign-up.company-profile.errors.requiredCompany"
+              | translate
+          }}
+        } @else if (this.companyForm.get("company")?.hasError("spaces")) {
+          {{
+            "authentication.sign-up.company-profile.errors.companySpaces"
+              | translate
+          }}
+        } @else if (this.companyForm.get("company")?.hasError("specialChar")) {
+          {{
+            "authentication.sign-up.company-profile.errors.companySpecial"
+              | translate
+          }}
+        }
+      </span>
+    }
+    <!-- email -->
+    <label for="email">{{
+      "authentication.sign-up.company-profile.email" | translate
+    }}</label>
+    <input
+      type="email"
+      class="form-control"
+      formControlName="email"
+      placeholder="{{
+        'authentication.sign-up.company-profile.emailPlaceholder' | translate
+      }}"
+      [ngClass]="{
+        'not-match-confirm':
+          companyForm.get('email')?.invalid && companyForm.get('email')?.touched
+      }"
+    />
+    @if (
+      companyForm.get("email")?.touched && companyForm.get("email")?.invalid
+    ) {
+      <span class="not-match d-block mb-1">
+        @switch (true) {
+          @case (companyForm.get("email").hasError("required")) {
+            {{
+              "authentication.sign-up.company-profile.errors.requiredEmail"
+                | translate
+            }}
+          }
+          @case (companyForm.get("email").hasError("pattern")) {
+            {{
+              "authentication.sign-up.company-profile.errors.emailFormat"
+                | translate
+            }}
+          }
+        }
+      </span>
+    }
+    <!-- password -->
+    <app-passwordInput
+      [parentData]="{
+        valid: companyForm.valid,
+        email: companyForm.get('email')?.value,
+        name: companyForm.get('company')?.value
+      }"
+    />
+  </form>
+</section>

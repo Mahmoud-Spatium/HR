@@ -1,0 +1,132 @@
+// container for components within wrapper
+%container {
+  position: relative;
+  top: calc(100rem / 16);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: calc(30rem / 16);
+  width: min(calc(600rem / 16), 90%);
+  // padding: 0px 30px calc(30rem / 16);
+  cursor: default;
+  &[dir="rtl"] {
+    left: -50%;
+    transform: translateX(50%);
+  }
+  // media
+  @media (max-width: calc(676rem / 16)) {
+    gap: calc(10rem / 16);
+  }
+}
+
+// header at sections
+%header {
+  font-size: clamp(calc(22rem / 16), 5vw, calc(35rem / 16));
+  font-weight: 700;
+  line-height: calc(41.6rem / 16);
+  letter-spacing: -0.01em;
+  text-align: start;
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+
+// paragraph at sections
+%paragraph {
+  font-size: clamp(calc(14rem / 16), 4vw, calc(16rem / 16));
+  font-weight: 400;
+  line-height: calc(24rem / 16);
+  text-align: start;
+  color: #64748b;
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+
+// buttons at sections
+%button {
+  border-radius: 360px;
+  width: 100%;
+  background-color: #0acba7;
+  height: calc(50rem / 16);
+  font-weight: 700;
+  font-size: var(--medium);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(20rem / 16);
+}
+
+// label at sections
+%label {
+  font-size: clamp(calc(12rem / 16), 4vw, calc(16rem / 16));
+  font-weight: 500;
+  color: #101218;
+  margin-bottom: calc(5rem / 16);
+  line-height: calc(23.8rem / 16);
+  text-align: start;
+}
+
+// input at sections
+%input {
+  border-radius: 360px;
+  border: 1px solid #edf0f2;
+  font-size: calc(16rem / 16);
+  font-weight: 500;
+  color: #000929;
+  box-shadow: none;
+  height: calc(50rem / 16);
+  padding: 0px 20px;
+  // remove the arrows from the input number
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+// links at sections
+%link {
+  font-size: clamp(calc(14rem / 16), 4vw, calc(18rem / 16));
+  text-decoration: none;
+  font-weight: 600;
+  color: #0acba7;
+  cursor: pointer;
+}
+
+// back link at sections
+%backLink {
+  display: flex;
+  align-items: center;
+  gap: calc(4rem / 16);
+  margin-bottom: calc(15rem / 16);
+  font-size: clamp(calc(14rem / 16), 4vw, calc(16rem / 16));
+  font-weight: 600;
+  line-height: 24px;
+  color: #64748b;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 0;
+  width: fit-content;
+}
+
+// not allowed submit button styling
+%not-allow {
+  cursor: not-allowed !important;
+  background-color: #edf0f2 !important;
+  color: #b8c1cc !important;
+}
+// styling for error message
+%not-match {
+  position: relative;
+  top: -20px;
+  font-size: clamp(calc(12rem / 16), 3vw, calc(14rem / 16)) !important;
+  color: red !important;
+}

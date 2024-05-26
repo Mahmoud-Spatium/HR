@@ -1,0 +1,66 @@
+<section class="user-profile" [dir]="'dir' | translate">
+  <a routerLink="/start-auth"
+    ><img
+      src="../../../../../../../assets/images/authentication/arrow-left.svg"
+      alt=""
+    />
+    <span>{{ "authentication.back" | translate }}</span></a
+  >
+  <header>
+    <h1>{{ "authentication.sign-up.user-profile.header" | translate }}</h1>
+    <p>{{ "authentication.sign-up.user-profile.paragraph" | translate }}</p>
+  </header>
+  <form [formGroup]="userForm">
+    <label for="name">{{
+      "authentication.sign-up.user-profile.name" | translate
+    }}</label>
+    <input
+      placeholder="{{
+        'authentication.sign-up.user-profile.namePlaceholder' | translate
+      }}"
+      id="name"
+      class="form-control"
+      formControlName="name"
+      maxlength="50"
+      [ngClass]="{
+        'not-match-confirm':
+          userForm.get('name')?.invalid && userForm.get('name')?.touched
+      }"
+    />
+    @if (userForm.get("name")?.touched && userForm.get("name")?.invalid) {
+      <span class="not-match d-block mb-1">
+        @if (
+          this.userForm.get("name")?.hasError("minlength") ||
+          this.userForm.get("name")?.hasError("maxlength")
+        ) {
+          {{
+            "authentication.sign-up.user-profile.errors.nameLength" | translate
+          }}
+          *
+        } @else if (this.userForm.get("name")?.hasError("required")) {
+          {{
+            "authentication.sign-up.user-profile.errors.enterName" | translate
+          }}
+          *
+        } @else if (this.userForm.get("name")?.hasError("spaces")) {
+          {{ "authentication.sign-up.user-profile.errors.spaces" | translate }}
+          *
+        } @else if (this.userForm.get("name")?.hasError("SorN")) {
+          {{ "authentication.sign-up.user-profile.errors.SorN" | translate }} *
+        }
+      </span>
+    }
+    <app-phoneInput
+      [parentData]="{
+        name: userForm.get('name')?.value,
+        valid: userForm.valid
+      }"
+    />
+  </form>
+  <p>
+    {{ "authentication.sign-up.user-profile.footer" | translate
+    }}<a routerLink="/sign-in">{{
+      "authentication.sign-up.user-profile.link" | translate
+    }}</a>
+  </p>
+</section>

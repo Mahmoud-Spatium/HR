@@ -1,0 +1,103 @@
+@import "../../../../../../../style/authentication/placeholder";
+
+.cFiles {
+  & {
+    @extend %container;
+  }
+  h1 {
+    @extend %header;
+    font-size: clamp(calc(19.5rem / 16), 3vw, calc(35rem / 16));
+  }
+  header p {
+    @extend %paragraph;
+    span {
+      color: #0acba7;
+      font-weight: 600;
+      font-size: clamp(calc(13rem / 16), 3vw, calc(18rem / 16));
+    }
+    @media (max-width: calc(600rem / 16)) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: calc(3rem / 16);
+    }
+  }
+  button {
+    @extend %button;
+    margin-top: 0px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: calc(25rem / 16);
+    padding-bottom: calc(20rem / 16);
+  }
+  form > div {
+    > p span {
+      color: red;
+    }
+    > p:last-of-type,
+    > p:last-of-type span,
+    .initial p:last-of-type,
+    .progress p {
+      font-size: clamp(calc(12rem / 16), 3vw, calc(13rem / 16));
+      font-weight: 400;
+      line-height: calc(18rem / 16);
+      color: #64748b;
+      margin: 0;
+    }
+    > p:first-of-type {
+      @extend %paragraph;
+      font-size: clamp(calc(14rem / 16), 3vw, calc(18rem / 16));
+      margin-bottom: calc(6rem / 16);
+      color: #101218;
+      font-weight: 500;
+    }
+  }
+}
+
+// helpful classes
+.error {
+  position: relative;
+  top: -10px;
+  font-size: 14px;
+  color: red;
+}
+.error-input {
+  border-color: red !important;
+}
+.not-allow {
+  cursor: not-allowed !important;
+  background-color: #edf0f2 !important;
+  color: #b8c1cc !important;
+}
+
+.initial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dotted #0acba7;
+  background-color: #fff;
+  border-radius: calc(16rem / 16);
+  padding: calc(15rem / 16);
+  min-width: calc(128rem / 16);
+  cursor: pointer;
+  font-size: clamp(calc(15rem / 16), 3vw, calc(18rem / 16));
+  p span {
+    color: #0acba7;
+    font-size: clamp(calc(14rem / 16), 3vw, calc(18rem / 16));
+  }
+}
+
+.progress {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: calc(10rem / 16);
+  margin: calc(5rem / 16) 0;
+  div {
+    background-color: #0acba7;
+    height: calc(4rem / 16);
+    border-radius: calc(24rem / 16);
+  }
+}
